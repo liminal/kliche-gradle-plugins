@@ -4,7 +4,7 @@ plugins {
 }
 
 //group = "com.github.liminal.kliche"
-version = "0.5.2"
+version = "0.6.0"
 description = "Plugin for applying common settings to android modules in a multi-module project"
 
 repositories {
