@@ -1,7 +1,5 @@
 package com.github.liminal.kliche.plugin.java8everything
 
-import com.android.build.gradle.AppExtension
-import com.android.build.gradle.LibraryExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.tasks.compile.JavaCompile
@@ -32,7 +30,7 @@ class Java8EverythingPlugin : Plugin<Project> {
 
         // Setup all android app modules to use Java 8
         pluginManager.withPlugin("com.android.application") {
-            configure<AppExtension> {
+            configure<com.android.build.gradle.AppExtension> {
                 compileOptions {
                     setSourceCompatibility(JAVA_8)
                     setTargetCompatibility(JAVA_8)
@@ -41,7 +39,7 @@ class Java8EverythingPlugin : Plugin<Project> {
         }
         // Setup all android library modules to use Java 8
         pluginManager.withPlugin("com.android.library") {
-            configure<LibraryExtension> {
+            configure<com.android.build.gradle.LibraryExtension> {
                 compileOptions {
                     setSourceCompatibility(JAVA_8)
                     setTargetCompatibility(JAVA_8)

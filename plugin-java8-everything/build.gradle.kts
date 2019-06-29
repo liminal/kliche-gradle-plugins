@@ -4,7 +4,7 @@ plugins {
 }
 
 //group = "com.github.liminal.kliche"
-version = "0.5.2"
+version = "0.5.3"
 description = "Plugin for automatically setting source/targetCompatibility of all modules in project to Java 8"
 
 repositories {
@@ -12,8 +12,7 @@ repositories {
     mavenCentral()
 }
 
-gradlePlugin {
-    @Suppress("UnstableApiUsage")
+configure<GradlePluginDevelopmentExtension> {
     plugins {
         create("java8Everything") {
             id = "kliche.java8-everything"
