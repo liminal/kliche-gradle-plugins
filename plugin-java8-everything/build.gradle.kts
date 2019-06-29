@@ -31,12 +31,11 @@ kotlinDslPluginOptions {
 
 
 dependencies {
-    compile("com.android.tools.build:gradle:3.3.0")
-    implementation(kotlin("gradle-plugin", "1.3.30"))
+    compileOnly("com.android.tools.build:gradle:3.3.0")
+    compileOnly(kotlin("gradle-plugin", "1.3.40"))
 
     testImplementation(gradleTestKit())
     testImplementation("junit:junit:4.12")
-
 }
 
 pluginBundle {
