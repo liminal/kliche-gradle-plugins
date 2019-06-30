@@ -3,8 +3,7 @@ plugins {
     id("com.gradle.plugin-publish") version "0.10.1"
 }
 
-//group = "com.github.liminal.kliche"
-version = "0.5.3"
+version = "0.6.0"
 description = "Plugin for automatically setting source/targetCompatibility of all modules in project to Java 8"
 
 repositories {

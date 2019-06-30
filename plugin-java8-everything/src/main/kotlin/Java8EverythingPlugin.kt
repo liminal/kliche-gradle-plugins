@@ -28,24 +28,21 @@ class Java8EverythingPlugin : Plugin<Project> {
             kotlinOptions.jvmTarget = JAVA_8
         }
 
-        // Setup all android app modules to use Java 8
-        pluginManager.withPlugin("com.android.application") {
-            configure<com.android.build.gradle.AppExtension> {
-                compileOptions {
-                    setSourceCompatibility(JAVA_8)
-                    setTargetCompatibility(JAVA_8)
-                }
+        // Setup all android modules to use Java 8
+        pluginManager.withPlugin("com.android.application") { java8android() }
+        pluginManager.withPlugin("com.android.library") { java8android() }
+        pluginManager.withPlugin("com.android.feature") { java8android() }
+        pluginManager.withPlugin("com.android.instantapp") { java8android() }
+    }
+
+    private fun Project.java8android() {
+        configure<com.android.build.gradle.BaseExtension> {
+            compileOptions {
+                setSourceCompatibility(JAVA_8)
+                setTargetCompatibility(JAVA_8)
             }
         }
-        // Setup all android library modules to use Java 8
-        pluginManager.withPlugin("com.android.library") {
-            configure<com.android.build.gradle.LibraryExtension> {
-                compileOptions {
-                    setSourceCompatibility(JAVA_8)
-                    setTargetCompatibility(JAVA_8)
-                }
-            }
-        }
+
     }
 
 
